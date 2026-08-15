@@ -18,6 +18,7 @@ const pathLabels: Record<string, string> = {
   "/crm/customers": "CRM팀 › 상담고객 DB",
   "/ppt": "PPT팀",
   "/sales": "세일즈팀",
+  "/card-news": "카드뉴스 편집기",
 };
 
 export default function TopBar() {

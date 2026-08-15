@@ -555,6 +555,25 @@ export default function ContentWaterfallPage() {
                   )}
                 </button>
               </div>
+
+              {/* 카드뉴스 → 편집기로 보내기 */}
+              {activeTab === "cardnews" && result.cardnews && (
+                <div className="flex justify-end pt-2">
+                  <button
+                    onClick={() => {
+                      localStorage.setItem(
+                        "solostack_cardnews_data",
+                        JSON.stringify({ text: result.cardnews, ts: Date.now() })
+                      );
+                      window.location.href = "/card-news";
+                    }}
+                    className="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-lg transition-colors"
+                  >
+                    <Check size={16} />
+                    확인 — 카드뉴스로 보내기
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center min-h-[280px] text-zinc-600 text-sm gap-2">
